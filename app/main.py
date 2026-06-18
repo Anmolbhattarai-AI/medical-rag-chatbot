@@ -11,7 +11,9 @@ Base.metadata.create_all(
 )
 
 app = FastAPI(
-    title="Palm Mind AI Assignment"
+    title="MedQuery AI",
+    description="Medical knowledge assistant powered by Retrieval-Augmented Generation (RAG).",
+    version="1.0.0"
 )
 
 app.include_router(

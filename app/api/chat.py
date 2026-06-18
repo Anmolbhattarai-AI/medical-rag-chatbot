@@ -49,9 +49,7 @@ def chat(
 
     except Exception as e:
         print("LLM ERROR:", e)
-
-    answer = f"LLM Error: {str(e)}"
-
+        answer = f"LLM Error: {str(e)}"
     add_message(
         session_id,
         "assistant",

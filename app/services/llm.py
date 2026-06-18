@@ -1,10 +1,9 @@
 import os
-
 import google.generativeai as genai
-
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(".env")
+
 print(
     "API KEY:",
     os.getenv("GEMINI_API_KEY")
@@ -49,29 +48,23 @@ Answer the question using the context.
         )
 
     prompt = f"""
-You are a helpful AI assistant.
-
-Conversation History:
-{history_text}
+You are a medical RAG assistant.
 
 Retrieved Context:
 {context}
 
-User Question:
+Conversation History:
+{history}
+
+Question:
 {question}
 
-Use the retrieved context to answer the question.
+Rules:
+1. Answer ONLY using the retrieved context.
+2. Do not use outside knowledge.
+3. If the answer is not present in the context, reply:
 
-If the context contains relevant information,
-provide a clear and concise answer.
+"I could not find relevant information in the uploaded documents."
 
-Only say
-"I could not find relevant information"
-if the context is completely unrelated.
+4. Keep answers concise and factual.
 """
-
-    response = model.generate_content(
-        prompt
-    )
-
-    return response.text

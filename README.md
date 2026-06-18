@@ -101,4 +101,4 @@ Anmol Bhattarai
 
 Computer Science Engineering Student
 
-BMS College of Engineering
+BMS College of Engineering Bangalore

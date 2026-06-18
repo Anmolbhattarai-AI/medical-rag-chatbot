@@ -22,6 +22,16 @@ MedQuery AI is a medical RAG chatbot built using:
 The system retrieves relevant medical information from uploaded documents and generates context-aware responses using Gemini.
 
 ---
+## Workflow
+
+1. User uploads a medical document.
+2. Document is chunked into smaller text segments.
+3. Sentence Transformer generates embeddings.
+4. Embeddings are stored in Qdrant Vector Database.
+5. User submits a medical question.
+6. Relevant chunks are retrieved through semantic search.
+7. Retrieved context is passed to Gemini.
+8. Gemini generates a context-aware answer.
 
 ## Features
 
@@ -137,6 +147,37 @@ uvicorn app.main:app --reload
 ```
 
 ---
+## Skills Demonstrated
+
+- Retrieval-Augmented Generation (RAG)
+- Large Language Model Integration
+- Semantic Search
+- Vector Databases
+- FastAPI Backend Development
+- REST API Design
+- Prompt Engineering
+- Conversational AI
+- Information Retrieval
+- Python Software Development
+- ## Example Usage
+
+### Upload Document
+
+Upload a medical text document:
+
+POST /ingest
+
+### Ask Questions
+
+POST /chat
+
+Question:
+
+What is heart disease?
+
+Response:
+
+Heart disease refers to a group of conditions affecting the heart and blood vessels.
 
 ## Future Improvements
 
@@ -148,6 +189,14 @@ uvicorn app.main:app --reload
 - Docker Deployment
 
 ---
+## Project Highlights
+
+- Developed an end-to-end Retrieval-Augmented Generation (RAG) chatbot for medical document question answering.
+- Implemented semantic search using Sentence Transformers and Qdrant.
+- Integrated Google Gemini for context-aware response generation.
+- Designed REST APIs using FastAPI for document ingestion and chat interactions.
+- Implemented conversational memory using SQLite.
+- Created an extensible architecture supporting future PDF and multi-document ingestion.
 
 ## Author
 

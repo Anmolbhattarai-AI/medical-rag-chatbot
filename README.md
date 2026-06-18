@@ -1,4 +1,9 @@
 # Medical RAG Chatbot
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
+![Qdrant](https://img.shields.io/badge/Qdrant-VectorDB-red)
+![Gemini](https://img.shields.io/badge/Gemini-LLM-orange)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
 AI-powered Retrieval-Augmented Generation (RAG) chatbot built using FastAPI, Qdrant, Sentence Transformers, and Google Gemini.
 

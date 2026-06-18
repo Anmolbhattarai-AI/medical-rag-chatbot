@@ -107,30 +107,22 @@ POST /chat
 ## Screenshots
 
 ### API Overview
-
-![API Overview](assets/home.png)
+![API Overview](assets/api-overview.png)
 
 ### Health Endpoint
-
-![Health](assets/health.png)
+![Health](assets/health-endpoint.png)
 
 ### Document Upload
-
-![Ingest](assets/ingest.png)
+![Ingest](assets/document-upload.png)
 
 ### Successful Ingestion
-
-![Ingest Success](assets/ingest_success.png)
+![Ingest Success](assets/ingest-success.png)
 
 ### Chat Interface
-
-![Chat](assets/chat.png)
+![Chat](assets/chat-interface.png)
 
 ### Chat Response
-
-![Chat Response](assets/chat_response.png)
-
----
+![Chat Response](assets/chat-response.png)
 
 ## Installation
 

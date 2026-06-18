@@ -1,58 +1,136 @@
-# Medical RAG Chatbot
-![Python](https://img.shields.io/badge/Python-3.10+-blue)
-![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
-![Qdrant](https://img.shields.io/badge/Qdrant-VectorDB-red)
-![Gemini](https://img.shields.io/badge/Gemini-LLM-orange)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+# MedQuery AI
 
-AI-powered Retrieval-Augmented Generation (RAG) chatbot built using FastAPI, Qdrant, Sentence Transformers, and Google Gemini.
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-green)
+![Qdrant](https://img.shields.io/badge/Qdrant-red)
+![Gemini](https://img.shields.io/badge/Gemini-orange)
+
+Medical knowledge assistant powered by Retrieval-Augmented Generation (RAG).
+
+---
 
 ## Overview
 
-This project implements a complete Retrieval-Augmented Generation (RAG) pipeline for intelligent medical question answering.
+MedQuery AI is a medical RAG chatbot built using:
 
-The system retrieves relevant information from a vector database using semantic search and then uses Google's Gemini Large Language Model to generate context-aware responses.
+- FastAPI
+- Qdrant Vector Database
+- Sentence Transformers
+- Google Gemini
+- SQLite
+
+The system retrieves relevant medical information from uploaded documents and generates context-aware responses using Gemini.
+
+---
 
 ## Features
 
-* Semantic Search using Sentence Transformers
-* Vector Database Storage with Qdrant
-* Document Chunking Pipeline
-* Conversational Memory
-* Gemini-Powered Response Generation
-* FastAPI REST API
-* Medical Knowledge Retrieval
+✅ Document Upload
+
+✅ Text Chunking
+
+✅ Embedding Generation
+
+✅ Qdrant Vector Storage
+
+✅ Semantic Search
+
+✅ Retrieval-Augmented Generation (RAG)
+
+✅ Gemini Integration
+
+✅ Chat Memory
+
+✅ Swagger Documentation
+
+✅ Health Endpoint
+
+---
 
 ## Architecture
 
 ```mermaid
 flowchart TD
 
-A[User Query] --> B[FastAPI Backend]
+A[Medical Document] --> B[Chunking]
 
-B --> C[Sentence Transformer Embedding]
+B --> C[Sentence Transformer]
 
 C --> D[Qdrant Vector Database]
 
-D --> E[Top Relevant Chunks]
+E[User Question] --> F[Embedding Generation]
 
-E --> F[Gemini LLM]
+F --> D
 
-F --> G[Generated Response]
+D --> G[Relevant Chunks]
 
-G --> H[User]
+G --> H[Gemini LLM]
+
+H --> I[Generated Response]
 ```
 
 ## Technology Stack
 
-| Component       | Technology            |
-| --------------- | --------------------- |
-| Backend         | FastAPI               |
-| Vector Database | Qdrant                |
-| Embeddings      | Sentence Transformers |
-| LLM             | Google Gemini         |
-| Database        | SQLite                |
-| Language        | Python                |
+| Component | Technology |
+|------------|------------|
+| Backend | FastAPI |
+| Vector Database | Qdrant |
+| Embeddings | Sentence Transformers |
+| LLM | Gemini |
+| Database | SQLite |
+| Language | Python |
+
+---
+
+## API Endpoints
+
+### Health Check
+
+```http
+GET /
+```
+
+### Upload Document
+
+```http
+POST /ingest
+```
+
+### Chat
+
+```http
+POST /chat
+```
+
+---
+
+## Screenshots
+
+### API Overview
+
+![API Overview](assets/home.png)
+
+### Health Endpoint
+
+![Health](assets/health.png)
+
+### Document Upload
+
+![Ingest](assets/ingest.png)
+
+### Successful Ingestion
+
+![Ingest Success](assets/ingest_success.png)
+
+### Chat Interface
+
+![Chat](assets/chat.png)
+
+### Chat Response
+
+![Chat Response](assets/chat_response.png)
+
+---
 
 ## Installation
 
@@ -66,43 +144,23 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
-## API Documentation
-
-Open:
-
-```text
-http://127.0.0.1:8000/docs
-```
-
-FastAPI automatically provides Swagger UI documentation.
-
-## Example Query
-
-Question:
-
-```text
-What is heart disease?
-```
-
-Answer:
-
-```text
-Heart disease is a condition affecting the cardiovascular system.
-```
+---
 
 ## Future Improvements
 
-* Frontend Interface
-* Authentication
-* Multi-document Upload
-* Hybrid Search
-* Evaluation Framework
-* Citation Support
+- PDF Support
+- Multiple Document Upload
+- Hybrid Search
+- Citation Support
+- Frontend Interface
+- Docker Deployment
+
+---
 
 ## Author
 
 Anmol Bhattarai
 
-Computer Science Engineering Student
+Computer Science and Engineering
 
-BMS College of Engineering Bangalore
+BMS College of Engineering, Bangalore

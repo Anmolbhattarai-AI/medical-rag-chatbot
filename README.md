@@ -20,23 +20,22 @@ The system retrieves relevant information from a vector database using semantic 
 
 ## Architecture
 
-```text
-User Query
-     │
-     ▼
-Embedding Model
-     │
-     ▼
-Qdrant Vector Search
-     │
-     ▼
-Relevant Chunks Retrieved
-     │
-     ▼
-Gemini LLM
-     │
-     ▼
-Final Answer
+```mermaid
+flowchart TD
+
+A[User Query] --> B[FastAPI Backend]
+
+B --> C[Sentence Transformer Embedding]
+
+C --> D[Qdrant Vector Database]
+
+D --> E[Top Relevant Chunks]
+
+E --> F[Gemini LLM]
+
+F --> G[Generated Response]
+
+G --> H[User]
 ```
 
 ## Technology Stack

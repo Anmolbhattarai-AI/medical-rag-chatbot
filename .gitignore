@@ -1,0 +1,13 @@
+venv/
+__pycache__/
+*.pyc
+
+.env
+
+qdrant_data/
+*.db
+
+.vscode/
+.idea/
+
+.DS_Store

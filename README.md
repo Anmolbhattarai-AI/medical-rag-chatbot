@@ -120,25 +120,25 @@ POST /chat
 ![API Overview](assets/api-overview.png)
 
 ### Health Endpoint
-![Health](assets/health-endpoint.png)
+![Health Endpoint](assets/health-endpoint.png)
 
 ### Document Upload
-![Ingest](assets/document-upload.png)
+![Document Upload](assets/document-upload.png)
 
 ### Successful Ingestion
-![Ingest Success](assets/ingest-success.png)
+![Successful Ingestion](assets/ingest-success.png)
 
-### Chat Query
-![Chat Query](assets/chat-query.png)
+### Chat Interface
+![Chat Interface](assets/chat-interface.png)
 
 ### Chat Response
 ![Chat Response](assets/chat-response.png)
 
-### Interview Booking
-![Booking](assets/booking-request.png)
+### Interview Booking Request
+![Interview Booking Request](assets/booking-request.png)
 
-### Booking Success
-![Booking Success](assets/booking-success.png)
+### Interview Booking Success
+![Interview Booking Success](assets/booking-success.png)
 
 ## Installation
 

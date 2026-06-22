@@ -128,11 +128,17 @@ POST /chat
 ### Successful Ingestion
 ![Ingest Success](assets/ingest-success.png)
 
-### Chat Interface
-![Chat](assets/chat-interface.png)
+### Chat Query
+![Chat Query](assets/chat-query.png)
 
 ### Chat Response
 ![Chat Response](assets/chat-response.png)
+
+### Interview Booking
+![Booking](assets/booking-request.png)
+
+### Booking Success
+![Booking Success](assets/booking-success.png)
 
 ## Installation
 

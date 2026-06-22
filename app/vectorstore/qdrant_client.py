@@ -4,6 +4,7 @@ from qdrant_client.models import (
     Distance,
     PointStruct
 )
+import uuid
 
 client = QdrantClient(
     path="./qdrant_data"
@@ -13,7 +14,6 @@ COLLECTION_NAME = "documents"
 
 
 def create_collection():
-
     collections = client.get_collections()
 
     names = [
@@ -23,6 +23,8 @@ def create_collection():
 
     if COLLECTION_NAME not in names:
 
+        print(f"Creating collection: {COLLECTION_NAME}")
+
         client.create_collection(
             collection_name=COLLECTION_NAME,
             vectors_config=VectorParams(
@@ -31,22 +33,27 @@ def create_collection():
             )
         )
 
+    else:
+        print(f"Collection '{COLLECTION_NAME}' already exists")
+
 
 def store_embeddings(
     vectors,
     chunks
 ):
 
+    create_collection()
+
     points = []
 
-    for idx, vector in enumerate(vectors):
+    for vector, chunk in zip(vectors, chunks):
 
         points.append(
             PointStruct(
-                id=idx,
+                id=str(uuid.uuid4()),
                 vector=vector,
                 payload={
-                    "text": chunks[idx]
+                    "text": chunk
                 }
             )
         )
@@ -55,3 +62,9 @@ def store_embeddings(
         collection_name=COLLECTION_NAME,
         points=points
     )
+
+    print(f"Stored {len(points)} vectors")
+
+
+# Create collection when module loads
+create_collection()

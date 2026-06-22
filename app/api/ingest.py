@@ -14,6 +14,7 @@ from app.services.embeddings import (
     generate_embeddings
 )
 
+from app.services.pdf_loader import extract_pdf_text
 from app.vectorstore.qdrant_client import (
     create_collection,
     store_embeddings
@@ -59,8 +60,26 @@ async def ingest_document(
 
         content = ""
 
-        for page in reader.pages:
-            content += page.extract_text()
+        if file.filename.endswith(".txt"):
+
+            content = (
+        await file.read()
+    ).decode("utf-8")
+
+        else:
+
+            reader = PdfReader(
+        file.file
+    )
+
+    content = ""
+
+    for page in reader.pages:
+
+        extracted = page.extract_text()
+
+        if extracted:
+            content += extracted
 
     # Chunking
 

@@ -3,20 +3,19 @@ from app.vectorstore.qdrant_client import (
     COLLECTION_NAME
 )
 
+print("\nCollections:")
 collections = client.get_collections()
 
-print("\nCollections:")
 for c in collections.collections:
     print(c.name)
 
 print("\nStored Documents:\n")
 
-records, _ = client.scroll(
+records = client.scroll(
     collection_name=COLLECTION_NAME,
     limit=100,
     with_payload=True,
     with_vectors=False
 )
 
-for record in records:
-    print(record.payload)
+print(records)
